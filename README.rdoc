@@ -1,0 +1,35 @@
+= uat_director 
+
+Adds a toolbar to your rails app that directs your clients to test stories that have been marked as 'delivered' in Pivotal Tracker.
+
+== Installing
+
+Add uat_director to your Gemfile:
+
+  gem 'uat_director'
+
+Create an initializer to configure your pivotal tracker api token and project id:
+
+  UatDirector.configure do |config|
+    config.pivotal_tracker_token   = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    config.pivotal_tracker_project = 123456
+  end
+
+Add the UatDirector::RackApp to your middleware stack:
+
+  require 'uat_director'
+  config.middleware.use(UatDirector::RackApp)
+
+== Note on Patches/Pull Requests
+ 
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+Copyright (c) 2010 Ben Askins. See LICENSE for details.
