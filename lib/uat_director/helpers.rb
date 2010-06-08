@@ -1,32 +1,7 @@
 module UatDirector
   module Helpers
     def uat_director
-<<TDSCRIPT
-<script type="text/javascript">
-  $("body").prepend("#{toolbar_html}");
-  $("#uat-bar").css({width: "100%", background: "#000", "text-align": "right"});
-  $("#uat-bar a.go").css({color: "#fff"});
-  $("#uat-bar .pop-over").css({position: "absolute", right: "0px", clear: "none", "z-index": "99999999", background: "#fff", "text-align": "left"});
-  $("#uat-bar .hide").css({display: "none"});
-  $(function() {
-    $("#uat-bar a.go").click(function() {
-      $.ajax({
-        url: '/uat_director',
-        success: function(response) {
-          $(".pop-over").append(response); 
-          $(".pop-over").slideDown();
-        }
-      });
-    });
-
-    $("#uat-bar a.close").click(function() {
-      $(".pop-over").slideUp(function() {
-        $(".pop-over ol").remove();
-      });
-    });
-  });
-</script>
-TDSCRIPT
+      "<script type='text/javascript' src='http://github.com/plus2/uat_director/raw/master/lib/uat_director/javascripts/uat_director.js'></script>"
     end
 
     def toolbar_html
