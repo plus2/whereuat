@@ -4,10 +4,7 @@ module UatDirector
 <<TDSCRIPT
 <script type="text/javascript">
   $("body").prepend("#{toolbar_html}");
-  $("#uat-bar").css({width: "100%", background: "#000", "text-align": "right"});
-  $("#uat-bar a.go").css({color: "#fff"});
-  $("#uat-bar .pop-over").css({position: "absolute", right: "0px", clear: "none", "z-index": "99999999", background: "#fff", "text-align": "left"});
-  $("#uat-bar .hide").css({display: "none"});
+  $("head").append("<link href='http://github.com/plus2/uat_director/raw/master/lib/uat_director/stylesheets/uat_director.css' media='screen' rel='stylesheet' type='text/css'>");
   $(function() {
     $("#uat-bar a.go").click(function() {
       $.ajax({
