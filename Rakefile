@@ -12,8 +12,8 @@ begin
     gem.authors = ["Ben Askins"]
     # gem is a Gem::Specificatiohttp://www.rubygems.org/read/chapter/20 n... see http://www.rubygems.org/read/chapter/20 for additional settings
     gem.add_dependency("pivotal-tracker", ">= 0.1.3")
-    gem.add_dependency("haml", ">= 3.0.9")
-    gem.add_dependency("rack", ">= 1.1.0")
+    gem.add_dependency("haml", ">= 3.0.0")
+    gem.add_dependency("rack", ">= 1.0.0")
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
