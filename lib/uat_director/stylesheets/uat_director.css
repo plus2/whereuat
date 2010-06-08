@@ -1,0 +1,26 @@
+#uat-bar {
+  width: 100%;
+  background: #000;
+  text-align: right;
+} 
+
+#uat-bar a.go {
+  color: #fff;
+}
+
+#uat-bar .pop-over {
+  position: absolute;
+  right: 0px;
+  clear: none;
+  z-index: 999999999;
+  background: #fff;
+  text-align: left;
+}
+
+#uat-bar .pop-over ol {
+  list-style: decimal;
+}
+
+#uat-bar .hide {
+  display: none;
+}
