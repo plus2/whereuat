@@ -35,6 +35,7 @@
   color: #efefef;
   text-align: left;
   padding: 37px 0 .75em 0;
+  z-index: 2147483647;
   
   -moz-border-radius-bottomright: 10px;
   -webkit-border-bottom-right-radius: 10px;
