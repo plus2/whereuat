@@ -9,12 +9,12 @@
 }
 
 #uat-bar a:link, #uat-bar a:visited {
-  color: #efefef
+  color: #efefef;
+  text-decoration: none;
 }
 
 #uat-bar a:active, #uat-bar a:hover, #uat-bar a:focus {
   color: #fff;
-  background-color: #212121
 }
 
 #uat-bar a.go {
@@ -22,7 +22,6 @@
   top: 0;
   right: 5px;
   font-weight: bold;
-  text-decoration: none;
   padding: .5em;
   display: block;
   float: right;
