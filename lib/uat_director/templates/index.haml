@@ -2,3 +2,4 @@
   - @stories.each do |story|
     %li
       %a{:href => story.url}= story.name
+      %input.accept(type='checkbox' name='accept')
