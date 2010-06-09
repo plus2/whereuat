@@ -4,7 +4,8 @@
   position: absolute;
   top: 0;
   right: 5px;
-  padding: 0
+  padding: 0;
+  z-index: 2147483647;
 }
 
 #uat-bar a:link, #uat-bar a:visited {
@@ -26,7 +27,7 @@
   display: block;
   float: right;
   width: 180px;
-  background-color: #121212
+  background-color: #121212;
 }
 
 #uat-bar .pop-over {
@@ -35,7 +36,6 @@
   color: #efefef;
   text-align: left;
   padding: 37px 0 .75em 0;
-  z-index: 2147483647;
   
   -moz-border-radius-bottomright: 10px;
   -webkit-border-bottom-right-radius: 10px;
@@ -71,5 +71,7 @@
 #uat-bar .hide {
   display:  none;
 }
+
+
 
 
