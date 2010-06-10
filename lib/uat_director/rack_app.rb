@@ -12,22 +12,38 @@ module UatDirector
     end
 
     def call(env)
-      if env["PATH_INFO"] =~ /^\/uat_director/
+      case env["PATH_INFO"]
+      when /^\/uat_director$/
         index
+      when /^\/uat_director\/(.*)\/accept/
+        accept $1
       else
         @app.call(env)
       end
     end
 
     def index
-      @project = PT::Project.find(config.pivotal_tracker_project)
-      @stories = @project.stories.all(:current_state => "delivered")
+      @stories = project.stories.all(:current_state => "delivered")
       haml "index"
+    end
+
+    def accept(pivotal_story_id)
+      story = project.stories.find(pivotal_story_id.to_i)  
+      story.update(:current_state => 'accepted')
+      render "Accepted" 
+    end
+
+    def project
+      @project ||= PT::Project.find(config.pivotal_tracker_project)
     end
 
     def haml(file_name, options={})
       template = (template_root + "#{file_name}.haml").read
-      [200, {"Content-Type" => "text/html"}, [Haml::Engine.new(template).render(self)]]
+      render Haml::Engine.new(template).render(self)
+    end
+
+    def render(html)
+      [200, {"Content-Type" => "text/html"}, [html]]
     end
 
     def template_root
