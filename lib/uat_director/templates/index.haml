@@ -1,6 +1,7 @@
 %ol
   - @stories.each do |story|
     %li
-      %input.accept(type='checkbox' name='accept')
+      %a.accept{:href => "#accept"} Accept
+      %a.reject{:href => "#reject"} Reject
       %a{:href => story.url}= story.name
       %span.story-id.hide= story.id
