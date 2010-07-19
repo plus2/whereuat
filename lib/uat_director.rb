@@ -6,10 +6,13 @@ ActionView::Base.send :include, UatDirector::Helpers
 
 module UatDirector
   class << self
-    attr_accessor :configuration
+    attr_writer :configuration
+
+    def configuration
+      @configuration ||= Configuration.new
+    end
 
     def configure
-      self.configuration ||= Configuration.new
       yield(configuration)
     end
   end
