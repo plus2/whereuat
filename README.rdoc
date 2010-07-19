@@ -1,28 +1,28 @@
-= uat_director
+= whereuat
 
 Adds a toolbar to your rails app that directs your clients to test stories that have been marked as 'delivered' in Pivotal Tracker.
 
 == Installing
 
-Add uat_director to your Gemfile:
+Add whereuat to your Gemfile:
 
-  gem 'uat_director'
+  gem 'whereuat'
 
 Create an initializer to configure your pivotal tracker api token and project id:
 
-  UatDirector.configure do |config|
+  Whereuat.configure do |config|
     config.pivotal_tracker_token   = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     config.pivotal_tracker_project = 123456
   end
 
-Add the UatDirector::RackApp to your middleware stack (in your environment.rb file):
+Add the Whereuat::RackApp to your middleware stack (in your environment.rb file):
 
-  require 'uat_director'
-  config.middleware.use(UatDirector::RackApp)
+  require 'whereuat'
+  config.middleware.use(Whereuat::RackApp)
 
 Use the following helper somewhere in your application layout (we recommend at the end of the body):
 
-  = uat_director
+  = whereuat
 
 The helper will insert a smidgeon of javascript (jquery is assumed to be available) that will add a tiny toolbar to your view.
 Reload a page from your app and give it a whirl.

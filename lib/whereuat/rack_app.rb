@@ -2,7 +2,7 @@ require 'pathname'
 require 'haml'
 require 'pivotal-tracker'
 
-module UatDirector
+module Whereuat
   class RackApp
     PT = PivotalTracker
 
@@ -13,9 +13,9 @@ module UatDirector
 
     def call(env)
       case env["PATH_INFO"]
-      when /^\/uat_director$/
+      when /^\/whereuat$/
         index
-      when /^\/uat_director\/(.*)\/accept/
+      when /^\/whereuat\/(.*)\/accept/
         accept $1
       else
         @app.call(env)
@@ -51,7 +51,7 @@ module UatDirector
     end
 
     def config
-      UatDirector.configuration
+      Whereuat.configuration
     end
   end
 end

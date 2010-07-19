@@ -23,15 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
-     "lib/uat_director.rb",
-     "lib/uat_director/configuration.rb",
-     "lib/uat_director/helpers.rb",
-     "lib/uat_director/javascript/uat_director.js",
-     "lib/uat_director/rack_app.rb",
-     "lib/uat_director/stylesheets/bg-uat.gif",
-     "lib/uat_director/stylesheets/uat-bg.png",
-     "lib/uat_director/stylesheets/uat_director.css",
-     "lib/uat_director/templates/index.haml"
+     "whereuat.gemspec"
   ]
   s.homepage = %q{http://github.com/plus2/whereuat}
   s.rdoc_options = ["--charset=UTF-8"]

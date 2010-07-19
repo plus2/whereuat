@@ -1,10 +1,10 @@
-require 'uat_director/configuration'
-require 'uat_director/rack_app'
-require 'uat_director/helpers'
+require 'whereuat/configuration'
+require 'whereuat/rack_app'
+require 'whereuat/helpers'
 
-ActionView::Base.send :include, UatDirector::Helpers
+ActionView::Base.send :include, Whereuat::Helpers
 
-module UatDirector
+module Whereuat
   class << self
     attr_writer :configuration
 
