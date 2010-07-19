@@ -11,6 +11,11 @@ module Whereuat
       self.whereuat_stylesheet_url = "http://github.com/plus2/whereuat/raw/master/lib/whereuat/stylesheets/whereuat.css"
       self.whereuat_javascript_url = "http://github.com/plus2/whereuat/raw/master/lib/whereuat/javascript/whereuat.js"
     end
+
+    def use_dev_resources!
+      self.whereuat_stylesheet_url = "/whereuat/whereuat.css"
+      self.whereuat_javascript_url = "/whereuat/whereuat.js"
+    end
   end
 
 end

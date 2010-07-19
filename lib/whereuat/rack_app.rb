@@ -2,6 +2,8 @@ require 'pathname'
 require 'haml'
 require 'pivotal-tracker'
 
+require 'pp'
+
 module Whereuat
   class RackApp
     PT = PivotalTracker
@@ -12,13 +14,34 @@ module Whereuat
     end
 
     def call(env)
-      case env["PATH_INFO"]
-      when /^\/whereuat$/
+      req = Rack::Request.new(env)
+
+      if env?('development') && dev_rsp = dev_mode(req)
+        return dev_rsp
+      end
+
+      case req.path
+      when %r{^/whereuat$}
         index
-      when /^\/whereuat\/(.*)\/accept/
+      when %r{^/whereuat/(.*)/accept}
         accept $1
       else
         @app.call(env)
+      end
+    end
+
+    def env?(env)
+      (ENV['RACK_ENV'] || (defined?(Rails) && Rails.env)) == env
+    end
+
+    def dev_mode(req)
+      case req.path
+      when %r{^/whereuat/whereuat.css$}
+        [200, {"Content-Type" => "text/css"}, [ (root + 'lib/whereuat/stylesheets/whereuat.css').read ]]
+        
+      when %r{^/whereuat/whereuat.js$}
+        [200, {"Content-Type" => "text/javascript"}, [ (root + 'lib/whereuat/javascript/whereuat.js').read ]]
+        
       end
     end
 
@@ -46,8 +69,11 @@ module Whereuat
       [200, {"Content-Type" => "text/html"}, [html]]
     end
 
+    def root
+      @root ||= Pathname("../../../").expand_path(__FILE__)
+    end
     def template_root
-      Pathname.new(__FILE__).parent + "templates"
+      @template_root ||= root+'lib/whereuat/templates'
     end
 
     def config
