@@ -25,6 +25,8 @@ module Whereuat
         index
       when %r{^/whereuat/(.*)/accept}
         accept $1
+      when %r{^/whereuat/(.*)/reject}
+        reject $1
       else
         @app.call(env)
       end
@@ -56,6 +58,12 @@ module Whereuat
       render "Accepted" 
     end
 
+    def reject(pivotal_story_id)
+      story = project.stories.find(pivotal_story_id.to_i)  
+      story.update(:current_state => 'rejected')
+      render "Rejected" 
+    end
+
     def project
       @project ||= PT::Project.find(config.pivotal_tracker_project)
     end
@@ -72,6 +80,7 @@ module Whereuat
     def root
       @root ||= Pathname("../../../").expand_path(__FILE__)
     end
+
     def template_root
       @template_root ||= root+'lib/whereuat/templates'
     end
