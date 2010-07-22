@@ -16,6 +16,7 @@
 
 #uat-bar a:active, #uat-bar a:hover, #uat-bar a:focus {
   color: #fff;
+  text-decoration: underline;
 }
 
 #uat-bar a.go {
