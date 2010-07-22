@@ -60,12 +60,12 @@
 }
 
 #uat-bar .pop-over li {
-  padding: .75em 0 .75em 65px;
+  padding: .75em .75em .75em 95px;
   margin-bottom: 5px;
   position: relative;
 }
 
-#uat-bar .pop-over li.header {font-size: 14px;font-weight:bolder;border-bottom: 1px solid #2c2c2c;margin-bottom: 1em;}
+#uat-bar .pop-over li.header {font-size: 18px;font-weight:normal;border-bottom: 1px solid #2c2c2c;margin-bottom: 1em;padding-left: 0;}
 
 #uat-bar .pop-over li.rejected {
   background: #a82a30;
@@ -122,10 +122,26 @@
   background-position: -9px -168px;
 }
 
+#uat-bar .pop-over li a.pivotal {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  display:block;
+  width: 25px;
+  height: 30px;
+  background: url(http://conversant.com.au/whereuat/uat-bg.png) no-repeat -9px -301px;
+  font-size: 0.001em;
+  text-indent: -20000em;
+}
+
+#uat-bar .pop-over li a.pivotal:hover {
+  background-position: -9px -333px;
+}
+
 
 #uat-bar label {margin-top: 5px;padding-top:5px;display:block;font-weight:bold;border-top: 1px dashed #2c2c2c;}
 #uat-bar textarea {width: 250px;height: 40px;margin-bottom: 5px;}
-#uat-bar #reject {
+#uat-bar button.reject {
   display:block;
   width: 60px;
   height: 25px;

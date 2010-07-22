@@ -5,12 +5,13 @@
       %li
         %a.accept{:href => "#accept", :title => "accept"} accept
         %a.reject{:href => "#reject", :title => "reject"} reject
-        %a.story{:href => story.url}= story.name
+        %a.pivotal{:href => story.url, :title => "View in Pivotal Tracker"} View in Pivotal Tracker
+        = story.name
         %span.story-id.hide= story.id
         %form.hide
           %label(for="reason") Reason for rejection
           %textarea(name="reason")
-          %button#reject Reject
+          %button.reject Reject
 - else
   %ol
     %li.no-stories There are no stories for you to test at this time.
