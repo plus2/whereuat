@@ -1,8 +1,15 @@
-%ol
-  %li.header Stories for you to test
-  - @stories.each do |story|
-    %li
-      %a.accept{:href => "#accept", :title => "accept"} accept
-      %a.reject{:href => "#reject", :title => "reject"} reject
-      %a.story{:href => story.url}= story.name
-      %span.story-id.hide= story.id
+- if @stories.length != 0
+  %ol
+    %li.header Stories for you to test
+    - @stories.each do |story|
+      %li
+        %a.accept{:href => "#accept", :title => "accept"} accept
+        %a.reject{:href => "#reject", :title => "reject"} reject
+        %a.story{:href => story.url}= story.name
+        %span.story-id.hide= story.id
+        %form.hide
+          %textarea(name="reason")
+          %button Reject
+- else
+  %ol
+    %li.no-stories There are no stories for you to test at this time.
