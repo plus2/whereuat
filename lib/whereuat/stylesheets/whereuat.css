@@ -120,3 +120,16 @@
 #uat-bar .pop-over li a.reject:hover {
   background-position: -9px -168px;
 }
+
+
+#uat-bar label {margin-top: 5px;padding-top:5px;display:block;font-weight:bold;border-top: 1px dashed #2c2c2c;}
+#uat-bar textarea {width: 250px;height: 40px;margin-bottom: 5px;}
+#uat-bar #reject {
+  display:block;
+  width: 60px;
+  height: 25px;
+  background: url(http://conversant.com.au/whereuat/uat-bg.png) no-repeat -1px -275px;
+  font-size: 0.001em;
+  text-indent: -20000em;
+  border:none;
+}
