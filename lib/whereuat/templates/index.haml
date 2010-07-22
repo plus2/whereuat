@@ -6,6 +6,7 @@
         %a.accept{:href => "#accept", :title => "accept"} accept
         %a.reject{:href => "#reject", :title => "reject"} reject
         %a.pivotal{:href => story.url, :title => "View in Pivotal Tracker"} View in Pivotal Tracker
+        %img.hide.spinner(src="http://conversant.com.au/whereuat/spinner.gif")
         %span.story= story.name
         %span.story-id.hide= story.id
         %form.hide
