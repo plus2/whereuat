@@ -6,11 +6,11 @@
         %a.accept{:href => "#accept", :title => "accept"} accept
         %a.reject{:href => "#reject", :title => "reject"} reject
         %a.pivotal{:href => story.url, :title => "View in Pivotal Tracker"} View in Pivotal Tracker
-        = story.name
+        %span.story= story.name
         %span.story-id.hide= story.id
         %form.hide
           %label(for="reason") Reason for rejection
-          %textarea(name="reason")
+          %textarea.reason(name="reason")
           %button.reject Reject
 - else
   %ol

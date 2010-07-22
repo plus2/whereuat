@@ -15,7 +15,7 @@ module Whereuat
 
     def call(env)
       req = Rack::Request.new(env)
-
+      
       if env?('development') && dev_rsp = dev_mode(req)
         return dev_rsp
       end
@@ -26,7 +26,7 @@ module Whereuat
       when %r{^/whereuat/(.*)/accept}
         accept $1
       when %r{^/whereuat/(.*)/reject}
-        reject $1
+        reject $1, req.params["reason"]
       else
         @app.call(env)
       end
@@ -58,10 +58,10 @@ module Whereuat
       render "Accepted" 
     end
 
-    def reject(pivotal_story_id)
-      debugger()
+    def reject(pivotal_story_id, reason=nil)
       story = project.stories.find(pivotal_story_id.to_i)  
       story.update(:current_state => 'rejected')
+      story.notes.create(:text => "[rejected] #{reason}")
       render "Rejected" 
     end
 
