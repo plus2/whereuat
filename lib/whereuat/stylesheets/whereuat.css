@@ -16,7 +16,6 @@
 
 #uat-bar a:active, #uat-bar a:hover, #uat-bar a:focus {
   color: #fff;
-  background: #212121
 }
 
 #uat-bar a.go {
@@ -26,11 +25,11 @@
   font-weight: bold;
   padding: .5em;
   display: block;
-  width: 45px;
+  width: 42px;
   height: 125px;
   font-size: 0.001em;
   text-indent: -2000em;
-  background: #212121 url(uat-bg.png) no-repeat -2px -10px;
+  background: #212121 url(http://conversant.com.au/whereuat/uat-bg.png) no-repeat -4px -10px;
   -moz-border-radius-bottomright: 10px;
   -webkit-border-bottom-right-radius: 10px;
   -moz-border-radius-topright: 10px;
@@ -38,13 +37,12 @@
 }
 
 #uat-bar a.go:hover {
-  background-position: -10px -135px;
-  width: 55px;
+  background-position: -2px -10px;
 }
 
 #uat-bar .pop-over {
   clear: right;
-  background: #111 url(bg-uat.gif);
+  background: #212121;
   color: #efefef;
   text-align: left;
   padding: 0 0 .75em 0;
@@ -61,9 +59,12 @@
 }
 
 #uat-bar .pop-over li {
-  padding: .5em;
-  margin-bottom: 2px;
+  padding: .75em 0 .75em 65px;
+  margin-bottom: 5px;
+  position: relative;
 }
+
+#uat-bar .pop-over li.header {font-size: 14px;font-weight:bolder;border-bottom: 1px solid #2c2c2c;margin-bottom: 1em;}
 
 #uat-bar .pop-over li.rejected {
   background: #a82a30;
@@ -78,6 +79,8 @@
   cursor: pointer
 }
 
+#uat-bar .pop-over li.header:hover {background:transparent;}
+
 #uat-bar .hide {
   display:  none;
 }
@@ -86,4 +89,34 @@
   clear: none;  
 }
 
+#uat-bar .pop-over li a.accept {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display:block;
+  width: 25px;
+  height: 28px;
+  background: url(http://conversant.com.au/whereuat/uat-bg.png) no-repeat -9px -204px;
+  font-size: 0.001em;
+  text-indent: -20000em;
+}
 
+#uat-bar .pop-over li a.accept:hover {
+  background-position: -9px -234px;
+}
+
+#uat-bar .pop-over li a.reject {
+  position: absolute;
+  top: 0;
+  left: 29px;
+  display:block;
+  width: 25px;
+  height: 30px;
+  background: url(http://conversant.com.au/whereuat/uat-bg.png) no-repeat -9px -136px;
+  font-size: 0.001em;
+  text-indent: -20000em;
+}
+
+#uat-bar .pop-over li a.reject:hover {
+  background-position: -9px -168px;
+}
