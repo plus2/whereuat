@@ -59,6 +59,7 @@ module Whereuat
     end
 
     def reject(pivotal_story_id)
+      debugger()
       story = project.stories.find(pivotal_story_id.to_i)  
       story.update(:current_state => 'rejected')
       render "Rejected" 
