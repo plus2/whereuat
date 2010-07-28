@@ -42,6 +42,8 @@
 }
 
 #uat-bar .wua-pop-over {
+  min-height: 500px;
+  width: 0;
   clear: right;
   background: #212121;
   color: #efefef;
