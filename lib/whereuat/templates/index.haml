@@ -1,18 +1,18 @@
 - if @stories.length != 0
   %ol
-    %li.header Stories for you to test
+    %li.wua-header Stories for you to test
     - @stories.each do |story|
       %li
-        %a.accept{:href => "#accept", :title => "accept"} accept
-        %a.reject{:href => "#reject", :title => "reject"} reject
-        %a.pivotal{:href => story.url, :title => "View in Pivotal Tracker"} View in Pivotal Tracker
-        %img.hide.spinner(src="http://conversant.com.au/whereuat/spinner.gif")
-        %span.story= story.name
-        %span.story-id.hide= story.id
-        %form.hide
+        %a.wua-accept{:href => "#accept", :title => "accept"} accept
+        %a.wua-reject{:href => "#reject", :title => "reject"} reject
+        %a.wua-pivotal{:href => story.url, :title => "View in Pivotal Tracker"} View in Pivotal Tracker
+        %img.wua-hide.wua-spinner(src="http://conversant.com.au/whereuat/spinner.gif")
+        %span.wua-story= story.name
+        %span.wua-story-id.wua-hide= story.id
+        %form.wua-hide
           %label(for="reason") Reason for rejection
-          %textarea.reason(name="reason")
-          %button.reject Reject
+          %textarea.wua-reason(name="reason")
+          %button.wua-reject Reject
 - else
   %ol
-    %li.no-stories There are no stories for you to test at this time.
+    %li.wua-no-stories There are no stories for you to test at this time.

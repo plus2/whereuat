@@ -22,7 +22,7 @@ Use the following helper somewhere in your application layout (we recommend at t
 
   = whereuat
 
-The helper will insert a smidgeon of javascript (jquery is assumed to be available) that will add a tiny tab on the LHS 
+The helper will insert a smidgeon of javascript (jquery & jquery.ui are assumed to be available) that will add a tiny tab on the LHS 
 of each page.
 
 Reload a page from your app and give it a whirl.
@@ -39,9 +39,9 @@ Reload a page from your app and give it a whirl.
 
 == Contributors
 
-Ben Askins
-Lachie Cox
-Ben Webster
+* Ben Askins
+* Lachie Cox
+* Ben Webster
 
 == Copyright
 
