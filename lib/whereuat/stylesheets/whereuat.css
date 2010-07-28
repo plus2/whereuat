@@ -1,5 +1,5 @@
 #uat-bar {
-  width: 400px;
+  width: auto;
   text-align: center;
   position: absolute;
   top: 30%;
@@ -42,7 +42,7 @@
 }
 
 #uat-bar .wua-pop-over {
-  min-height: 500px;
+  min-height: 450px;
   width: 0;
   clear: right;
   background: #212121;
