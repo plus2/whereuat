@@ -26,7 +26,7 @@ If you're using Rails 3, tell it the HTML is safe
 
   = whereuat.html_safe
 
-The helper will insert a smidgeon of javascript (jquery & jquery.ui are assumed to be available) that will add a tiny tab on the LHS
+The helper will insert a smidgeon of javascript (jquery is assumed to be available) that will add a tiny tab on the LHS
 of each page.
 
 Reload a page from your app and give it a whirl.
