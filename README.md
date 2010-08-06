@@ -10,8 +10,6 @@ Add whereuat to your Gemfile:
 
     gem 'whereuat'
 
-Whereuat requires jquery to be included in your layout or templates already.
-
 Create an initializer to add the Whereuat::RackApp to your middleware stack and configure your pivotal tracker api token and project id:
 
     require 'whereuat'
@@ -30,7 +28,9 @@ If you're using Rails 3, tell it the HTML is safe
 
     = whereuat.html_safe
 
-The helper will insert a smidgeon of javascript (jquery is assumed to be available) that will add a tiny tab on the LHS of each page.
+The helper will insert a smidgeon of javascript that will add a tiny tab on the LHS of each page.
+
+**Please note** that whereuat requires `jQuery` to be included in your layout or templates already.
 
 Reload a page from your app and give it a whirl.
 
