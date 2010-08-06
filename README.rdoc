@@ -2,6 +2,8 @@
 
 Adds a slide out panel to your rails app that directs clients to test stories that have been marked as 'delivered' in Pivotal Tracker.
 
+http://img.skitch.com/20100806-gug4f5uapk6ixh64sk16qenf9s.jpg
+
 == Installing
 
 Add whereuat to your Gemfile:
