@@ -1,8 +1,7 @@
 require 'whereuat/configuration'
 require 'whereuat/rack_app'
 require 'whereuat/helpers'
-
-ActionView::Base.send :include, Whereuat::Helpers
+require 'whereuat/rails' if defined?(Rails)
 
 module Whereuat
   class << self

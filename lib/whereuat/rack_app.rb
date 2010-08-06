@@ -10,12 +10,12 @@ module Whereuat
 
     def initialize(app)
       @app             = app
-      PT::Client.token = config.pivotal_tracker_token 
+      PT::Client.token = config.pivotal_tracker_token
     end
 
     def call(env)
       req = Rack::Request.new(env)
-      
+
       if env?('development') && dev_rsp = dev_mode(req)
         return dev_rsp
       end
@@ -40,10 +40,10 @@ module Whereuat
       case req.path
       when %r{^/whereuat/whereuat.css$}
         [200, {"Content-Type" => "text/css"}, [ (root + 'lib/whereuat/stylesheets/whereuat.css').read ]]
-        
+
       when %r{^/whereuat/whereuat.js$}
         [200, {"Content-Type" => "text/javascript"}, [ (root + 'lib/whereuat/javascript/whereuat.js').read ]]
-        
+
       end
     end
 
@@ -53,16 +53,16 @@ module Whereuat
     end
 
     def accept(pivotal_story_id)
-      story = project.stories.find(pivotal_story_id.to_i)  
+      story = project.stories.find(pivotal_story_id.to_i)
       story.update(:current_state => 'accepted')
-      render "Accepted" 
+      render "Accepted"
     end
 
     def reject(pivotal_story_id, reason=nil)
-      story = project.stories.find(pivotal_story_id.to_i)  
+      story = project.stories.find(pivotal_story_id.to_i)
       story.update(:current_state => 'rejected')
       story.notes.create(:text => "[rejected] #{reason}")
-      render "Rejected" 
+      render "Rejected"
     end
 
     def project
