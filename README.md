@@ -13,7 +13,6 @@ Add whereuat to your Gemfile:
 Create an initializer to add the Whereuat::RackApp to your middleware stack and configure your pivotal tracker api token and project id:
 
     require 'whereuat'
-    Rails.configuration.middleware.use(Whereuat::RackApp)
 
     Whereuat.configure do |config|
       config.pivotal_tracker_token   = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
@@ -48,6 +47,7 @@ Reload a page from your app and give it a whirl.
 * Ben Askins
 * Lachie Cox
 * Ben Webster
+* Daniel Neighman
 
 ## Copyright
 
