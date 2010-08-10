@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{whereuat}
-  s.version = "0.0.11"
+  s.version = "0.0.12"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ben Askins", "Lachie Cox", "Ben Webster"]
-  s.date = %q{2010-08-09}
+  s.date = %q{2010-08-11}
   s.description = %q{Adds a toolbar to your rails app that directs your clients to test stories that have been marked as 'delivered' in Pivotal Tracker }
   s.email = %q{ben.askins@plus2.com.au}
   s.extra_rdoc_files = [
@@ -37,6 +37,7 @@ Gem::Specification.new do |s|
      "lib/whereuat/stylesheets/whereuat-open.png",
      "lib/whereuat/stylesheets/whereuat.css",
      "lib/whereuat/stylesheets/whereuat.png",
+     "lib/whereuat/tasks.rb",
      "lib/whereuat/templates/index.haml",
      "whereuat.gemspec"
   ]
