@@ -23,15 +23,29 @@ Use the following helper somewhere in your application layout (we recommend at t
 
     = whereuat
 
-If you're using Rails 3, tell it the HTML is safe
-
-    = whereuat.html_safe
-
 The helper will insert a smidgeon of javascript that will add a tiny tab on the LHS of each page.
 
 **Please note** that whereuat requires `jQuery` to be included in your layout or templates already.
 
 Reload a page from your app and give it a whirl.
+
+### Installing assets
+
+By default, whereuat's assets are served as raw blobs from Github. Sometimes you'd rather serve them from within your app.
+
+In Rails 3, after whereuat configuration above, its as simple as
+
+    rake whereuat:install
+
+In Rails 2, you need to create a `RAILS_ROOT/lib/tasks/whereuat.rake`
+    require 'whereuat/tasks'
+
+then
+    rake whereuat:install
+
+(You can always copy the assets in the gem over by hand)
+    
+**Please note** image assets are served from PLUS2's server at `conversant.com.au`. Configurable image urls are coming in a later version but for now please edit the paths manually.
 
 ## Note on Patches/Pull Requests
 
@@ -51,4 +65,4 @@ Reload a page from your app and give it a whirl.
 
 ## Copyright
 
-Copyright (c) 2010 Plus2. See LICENSE for details.
+Copyright &copy; 2010 Plus2. See LICENSE for details.
