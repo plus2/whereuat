@@ -23,6 +23,8 @@ end
 
 load Whereuat.gem_root+'pivotal_config.dont_commit.rb'
 
+use Whereuat::RackApp
+
 helpers do
   include Whereuat::Helpers
 end
