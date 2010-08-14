@@ -29,7 +29,6 @@ module Whereuat
       @gem_root ||= Pathname('../..').expand_path(__FILE__)
     end
 
-
     include Assets
   end
 end
