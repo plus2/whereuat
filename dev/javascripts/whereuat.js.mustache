@@ -4,7 +4,7 @@
 
     $("body").prepend("<div id='uat-bar'><a class='wua-go' href='#'>Show me what to test</a><span class='wua-go-spinner'></span><div class='wua-pop-over'></div></div>");
 
-    bar = $('#uat-bar');
+    bar       = $('#uat-bar');
     goSpinner = $('.wua-go-spinner',bar).hide();
     popOver   = $(".wua-pop-over"  ,bar);
     tab       = $("a.wua-go"       ,bar);
@@ -45,7 +45,7 @@
       });
     }
 
-    $("#uat-bar a.wua-accept").live("click", function() {
+    $("a.wua-accept", bar).live("click", function() {
       var acceptLink, storyName, storyId, spinner, listItem;
 
       acceptLink = $(this);
@@ -69,7 +69,7 @@
       return false;
     });
 
-    $("#uat-bar a.wua-reject").live("click", 
+    $("a.wua-reject", bar).live("click", 
       function() {
         var rejectLink, reasonForm;
 
@@ -87,7 +87,7 @@
       }
     );
 
-    $("#uat-bar button.wua-reject").live("click", function() {
+    $("button.wua-reject", bar).live("click", function() {
       var button, reasonForm, storyName, storyId, spinner, listItem;
 
       button     = $(this);
