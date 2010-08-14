@@ -20,6 +20,47 @@ rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
 end
 
-task :dev do
-  sh 'bundle exec shotgun dev/dev.rb'
+
+rake_app = Rake::Application.new
+rake_app.collect_tasks
+if rake_app.top_level_tasks.include?('dev')
+  require 'pathname'
+
+  sh "bundle check || bundle install"
+
+  task :dev => %w{dev:run}
+
+  namespace :dev do
+    task :run => :setup do
+      sh 'bundle exec shotgun --server thin dev/dev.rb'
+    end
+
+    task :setup do
+      gem_root = Pathname('..').expand_path(__FILE__)
+      pivotal_config = gem_root+'pivotal_config.dont_commit.rb'
+      unless pivotal_config.exist?
+        puts "What's your pivotal tracker token? (find your down the bottom of https://www.pivotaltracker.com/profile)."
+        token = $stdin.gets.chomp
+
+        puts "What pivotal tracker project do you want to test against? (e.g. The digits at the end of http://www.pivotaltracker.com/projects/12345)."
+        project_id = $stdin.gets.chomp
+
+        puts "Creating config using your details."
+
+        pivotal_config.open('w') {|f|
+          f << %{Whereuat.configure do |config|
+                  config.pivotal_tracker_token   = "#{token}"
+                  config.pivotal_tracker_project = #{project_id}
+                end
+          }.gsub(/^\s{3,16}/,'')
+        }
+      end
+    end
+  end
+
+else
+  desc "set up and run app in a convenient dev-only way. rake dev *must* be called as the only top level task (i.e. as 'rake dev')"
+  task :dev do
+    abort "Please run rake dev as 'rake dev'"
+  end
 end
