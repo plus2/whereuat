@@ -4,8 +4,13 @@ module Whereuat
 
       # bg becomes bg_uri. bg_uri yields a data uri of the image.
       ImageMap = {
-        :bg      => 'uat-bg.png',
-        :spinner => 'spinner.gif'
+        :bg         => 'uat-bg.png',
+        :logo       => 'uat-logo.gif',
+        :accept     => 'accept.png',
+        :reject     => 'reject.png',
+        :pt         => 'pt.png',
+        :btnreject  => 'btnreject.png',
+        :spinner    => 'spinner.gif'
       }
 
       ImageMap.each do |k,v|
