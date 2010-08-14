@@ -1,21 +1,24 @@
 (function($) {
   $(function() {
-    var popOver, tab, stories;
+    var bar, popOver, tab, stories;
 
-    $("body").prepend("<div id='uat-bar'><a class='wua-go' href='#'>Show me what to test</a><div class='wua-pop-over'></div></div>");
-    $("head").prepend("<link href='"+window.whereuat_stylesheet_url+"' media='screen' rel='stylesheet' type='text/css'>");
+    $("body").prepend("<div id='uat-bar'><a class='wua-go' href='#'>Show me what to test</a><span class='wua-go-spinner'></span><div class='wua-pop-over'></div></div>");
 
-    popOver = $("#uat-bar .wua-pop-over");
-    tab     = $("#uat-bar a.wua-go");
+    bar = $('#uat-bar');
+    goSpinner = $('.wua-go-spinner',bar).hide();
+    popOver   = $(".wua-pop-over"  ,bar);
+    tab       = $("a.wua-go"       ,bar);
 
     tab.toggle(
       function() {
         if (popOver.find("ol").length > 0) {
           slideOut();
         } else {
+          goSpinner.show();
           $.ajax({
             url: '/whereuat',
             success: function(response) {
+              goSpinner.fadeOut();
               popOver.append(response); 
               stories = popOver.find("ol");
               slideOut();
