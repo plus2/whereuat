@@ -19,5 +19,4 @@ rdoc
 pkg
 
 ## PROJECT::SPECIFIC
-Gemfile
 pivotal_config.dont_commit.rb
