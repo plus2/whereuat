@@ -2,8 +2,10 @@ require 'whereuat/configuration'
 require 'whereuat/rack_app'
 require 'whereuat/helpers'
 require 'whereuat/rails' if defined?(Rails)
+require 'whereuat/assets'
 
 module Whereuat
+
   class << self
     attr_writer :configuration
 
@@ -20,11 +22,14 @@ module Whereuat
     end
 
     def assets_path
-      Rails.root+'public/whereuat'
+      @assets_path ||= gem_root+'assets'
     end
 
     def gem_root
       @gem_root ||= Pathname('../..').expand_path(__FILE__)
     end
+
+
+    include Assets
   end
 end
