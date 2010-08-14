@@ -64,3 +64,18 @@ else
     abort "Please run rake dev as 'rake dev'"
   end
 end
+
+task :bundled_env do
+  require 'rubygems'
+  require 'bundler'
+  Bundler.setup
+
+  $LOAD_PATH << File.expand_path('../lib',__FILE__)
+  require 'whereuat'
+end
+
+namespace :assets do
+  task :rebuild => :bundled_env do
+    Whereuat::Assets.rebuild!
+  end
+end
