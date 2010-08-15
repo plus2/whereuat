@@ -44,7 +44,7 @@ If you'd like to contribute to `whereuat` you can get started by running
 
     rake dev
 
-This sets up the correct configuration and environment (follow the instructions), then starts a sinatra app under shotgun.
+This sets up the correct configuration and environment (follow the instructions), then starts a sinatra app under shotgun. You can use this sinatra app to verify your work on `whereuat`.
 
 All assets are regenerated from their constituents on each request. The constituents are located in the `dev` directory.
 
