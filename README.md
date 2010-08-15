@@ -29,24 +29,6 @@ The helper will insert a smidgeon of javascript that will add a tiny tab on the 
 
 Reload a page from your app and give it a whirl.
 
-### Installing assets
-
-By default, whereuat's assets are served as raw blobs from Github. Sometimes you'd rather serve them from within your app.
-
-In Rails 3, after whereuat configuration above, its as simple as
-
-    rake whereuat:install
-
-In Rails 2, you need to create a `RAILS_ROOT/lib/tasks/whereuat.rake`
-    require 'whereuat/tasks'
-
-then
-    rake whereuat:install
-
-(You can always copy the assets in the gem over by hand)
-    
-**Please note** image assets are served from PLUS2's server at `conversant.com.au`. Configurable image urls are coming in a later version but for now please edit the paths manually.
-
 ## Note on Patches/Pull Requests
 
 * Fork the project.
@@ -55,6 +37,16 @@ then
 * Commit, do not mess with rakefile, version, or history.
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
+
+### rake dev
+
+If you'd like to contribute to `whereuat` you can get started by running
+
+    rake dev
+
+This sets up the correct configuration and environment (follow the instructions), then starts a sinatra app under shotgun.
+
+All assets are regenerated from their constituents on each request. The constituents are located in the `dev` directory.
 
 ## Contributors
 
