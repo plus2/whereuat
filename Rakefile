@@ -75,6 +75,7 @@ task :bundled_env do
 end
 
 namespace :assets do
+  desc "Rebuild assets for distribution"
   task :rebuild => :bundled_env do
     Whereuat::Assets.rebuild!
   end

@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{whereuat}
-  s.version = "0.0.13"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ben Askins", "Lachie Cox", "Ben Webster"]
@@ -19,24 +19,38 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
      ".gitignore",
+     "Gemfile",
+     "Gemfile.lock",
      "LICENSE",
      "README.md",
      "Rakefile",
      "VERSION",
+     "assets/whereuat.css",
+     "assets/whereuat.js",
+     "dev/dev.rb",
+     "dev/images/accept.png",
+     "dev/images/bg-uat.gif",
+     "dev/images/btnreject.png",
+     "dev/images/pt.png",
+     "dev/images/reject.png",
+     "dev/images/spinner.gif",
+     "dev/images/uat-bg.png",
+     "dev/images/uat-logo.gif",
+     "dev/images/whereuat-close.png",
+     "dev/images/whereuat-open.png",
+     "dev/images/whereuat.png",
+     "dev/javascripts/whereuat.js.mustache",
+     "dev/stylesheets/whereuat.css.mustache",
+     "dev/views/index.haml",
      "lib/whereuat.rb",
+     "lib/whereuat/assets.rb",
+     "lib/whereuat/assets/context.rb",
+     "lib/whereuat/assets/image.rb",
      "lib/whereuat/configuration.rb",
      "lib/whereuat/helpers.rb",
-     "lib/whereuat/javascript/whereuat.js",
      "lib/whereuat/rack_app.rb",
      "lib/whereuat/rails.rb",
      "lib/whereuat/railtie.rb",
-     "lib/whereuat/stylesheets/bg-uat.gif",
-     "lib/whereuat/stylesheets/spinner.gif",
-     "lib/whereuat/stylesheets/uat-bg.png",
-     "lib/whereuat/stylesheets/whereuat-close.png",
-     "lib/whereuat/stylesheets/whereuat-open.png",
-     "lib/whereuat/stylesheets/whereuat.css",
-     "lib/whereuat/stylesheets/whereuat.png",
      "lib/whereuat/tasks.rb",
      "lib/whereuat/templates/index.haml",
      "whereuat.gemspec"
@@ -44,14 +58,14 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/plus2/whereuat}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Direct your clients to test delivered features}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<pivotal-tracker>, [">= 0.1.3"])
       s.add_runtime_dependency(%q<haml>, [">= 2.2.0"])
       s.add_runtime_dependency(%q<rack>, [">= 1.0.0"])
