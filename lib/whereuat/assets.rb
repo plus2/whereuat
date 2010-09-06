@@ -1,4 +1,3 @@
-require 'mustache'
 
 module Whereuat
   module Assets
@@ -18,12 +17,19 @@ module Whereuat
       Context.new
     end
 
+    def mustache
+      @mustache ||= begin
+                      require 'mustache'
+                      Mustache
+                    end
+    end
+
     def javascript
-      Mustache.render(javascript_template_file.read, Context.new)
+      mustache.render(javascript_template_file.read, Context.new)
     end
 
     def css
-      Mustache.render(css_template_file.read, Context.new)
+      mustache.render(css_template_file.read, Context.new)
     end
 
     def dev_root
