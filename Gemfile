@@ -8,4 +8,4 @@ gem 'shotgun'
 gem 'thin'
 
 gem 'json'
-gem 'pivotal-tracker', '>= 0.1.3'
+gem 'pivotal-tracker', '>= 0.3.1'
