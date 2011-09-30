@@ -45,12 +45,16 @@ if rake_app.top_level_tasks.include?('dev')
         puts "What pivotal tracker project do you want to test against? (e.g. The digits at the end of http://www.pivotaltracker.com/projects/12345)."
         project_id = $stdin.gets.chomp
 
+        puts "Does your pivotal tracker project use ssl?"
+        use_ssl = $stdin.gets.chomp.downcase.start_with?('y')
+
         puts "Creating config using your details."
 
         pivotal_config.open('w') {|f|
           f << %{Whereuat.configure do |config|
                   config.pivotal_tracker_token   = "#{token}"
                   config.pivotal_tracker_project = #{project_id}
+                  config.pivotal_tracker_use_ssl = #{use_ssl}
                 end
           }.gsub(/^\s{3,16}/,'')
         }
