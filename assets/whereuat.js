@@ -93,7 +93,7 @@
     );
 
     $("button.wua-reject", bar).live("click", function() {
-      var button, reasonForm, storyName, storyId, spinner, listItem;
+      var button, reasonForm, storyName, storyId, spinner, listItem, reasonText;
 
       button     = $(this);
 
@@ -103,12 +103,14 @@
       spinner    = reasonForm.siblings(".wua-spinner");
       listItem   = reasonForm.parent();
 
+      reasonText = button.siblings(".wua-reason").val();
+
       spinner.fadeIn();
 
       $.ajax({
         method: "POST",
         url: '/whereuat/' + storyId + '/reject',
-        data: {reason: $(".wua-reason").val()},
+        data: {reason: reasonText},
         success: function(response) {
           listItem.removeClass("wua-accepted").addClass("wua-rejected");
           reasonForm.slideUp();
