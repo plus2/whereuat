@@ -11,6 +11,7 @@ module Whereuat
     def initialize(app)
       @app             = app
       PT::Client.token = config.pivotal_tracker_token
+      PT::Client.use_ssl = config.pivotal_tracker_use_ssl
     end
 
     def call(env)
