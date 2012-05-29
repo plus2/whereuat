@@ -20,3 +20,6 @@ pkg
 
 ## PROJECT::SPECIFIC
 pivotal_config.dont_commit.rb
+
+## RVM
+.rvmrc

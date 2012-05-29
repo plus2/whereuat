@@ -15,8 +15,9 @@ Create an initializer to add the Whereuat::RackApp to your middleware stack and 
     require 'whereuat'
 
     Whereuat.configure do |config|
-      config.pivotal_tracker_token   = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-      config.pivotal_tracker_project = 123456
+      config.pivotal_tracker_token    = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      config.pivotal_tracker_project  = 123456
+      config.use_ssl                  = true # defaults to false
     end
 
 Use the following helper somewhere in your application layout (we recommend at the end of the body):
