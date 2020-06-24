@@ -17,7 +17,7 @@ GEM
       happymapper (>= 0.2.4)
       nokogiri (~> 1.4.1)
       rest-client (~> 1.5.1)
-    rack (1.2.1)
+    rack (2.2.3)
     rest-client (1.5.1)
       mime-types (>= 1.16)
     shotgun (0.8)
